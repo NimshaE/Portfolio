@@ -2,13 +2,21 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nimshae.github.io/portfolio",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "deploy": "gh-pages -d dist",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "vite",
+    "dev:backend": "cd ../backend && venv/Scripts/activate && uvicorn main:app --reload"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@vueuse/motion": "^3.0.3",
+    "axios": "^1.13.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
@@ -22,7 +30,9 @@
     "@vue/test-utils": "^2.0.0-0",
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "babel-jest": "^27.0.6",
+    "concurrently": "^9.2.1",
     "cypress": "^9.7.0",
+    "gh-pages": "^6.3.0",
     "jest": "^27.0.5"
   },
   "browserslist": [
