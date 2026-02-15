@@ -3,10 +3,9 @@
     <div class="index-text"> <router-link to="/" class="index-link">Nimsha Erin</router-link></div>
 
     <div class="nav-links">
-      <!--<router-link to="/ai">AI Engineering</router-link>-->
-      <router-link to="/research">Researches</router-link>
-      <router-link to="/uiux">UI/UX Designing</router-link>
+      <router-link to="/uiux">Product Designs</router-link>
       <router-link to="/about">About Me</router-link>
+      <router-link to="/contact">Contact</router-link>
     </div>
   </nav>
 </template>
@@ -87,11 +86,6 @@ export default {
   height: 2px;
   background: rgb(250, 250, 250);
   transition: width 0.3s;
-}
-
-.nav-links a:hover {
-  color: #f8f9fa;        /* filled color */
-  -webkit-text-stroke: 1px transparent;
 }
 
 .nav-links a:hover::after {

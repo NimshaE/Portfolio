@@ -6,35 +6,37 @@
         <h2 class="subtitle">Who Am I?</h2>
         <p>
           I’m <strong>Nimsha Erin</strong>.
-          <br>A passionate software developer,
-          AI engineer and researcher with experience in building intelligent
-          systems, data-driven applications, and user-centered digital products.
+          <br>
+          A Product Designer with a background in software engineering and AI, 
+          passionate about building intuitive, scalable, and user-centered digital products.
         </p>
 
         <p>
-          I specialize in <strong>UI/UX Engineering</strong>, <strong>Software Development</strong>, <strong>Deep Learning</strong>, <strong>NLP</strong>, and <strong>Computer Vision</strong> . I’m also
-          involved in academic research, focusing on machine learning experimentation and applied AI systems.
+          With 3+ years of professional experience in <strong>mobile (iOS/Android) and web UX/UI design</strong>, 
+          I work closely with engineers, product managers, and cross-functional teams to design 
+          end-to-end product experiences — from user research and UX flows to polished, production-ready UI.
         </p>
 
         <p>
-          Alongside engineering, I enjoy designing thoughtful, human-centered
-          experiences in UI/UX and exploring how cross-cultural perspectives
-          shape digital interaction.
+          I specialize in <strong>UX strategy</strong>, <strong>interaction design</strong>, <strong>design systems</strong>, 
+          and <strong>data-informed product improvement</strong>. My approach combines qualitative research 
+          (user interviews, usability testing) and quantitative analysis to continuously refine 
+          user experiences and drive measurable product impact.
         </p>
 
         <h2 class="subtitle">What I Do</h2>
         <ul class="skills">
-          <li>AI & Machine Learning Development</li>
-          <li>Research & Academic Writing</li>
-          <li>Frontend Development</li>
-          <li>Python Development</li>
-          <li>UI/UX Design, Prototyping & UI Testing</li>
-          <li>Business Analysis, Data Analysis & Visualization</li>
+          <li>Mobile App UX/UI Design (iOS & Android)</li>
+          <li>UX Flow & Information Architecture Design</li>
+          <li>Wireframing, Prototyping (Figma, Adobe XD)</li>
+          <li>User Research (Interviews, Surveys, Usability Testing)</li>
+          <li>Product Release Collaboration & Iterative Improvement</li>
+          <li>Design Systems & Cross-Functional Collaboration</li>
         </ul>
 
         <p class="closing">
-          I'm constantly learning, building, and exploring and I'm passionate about
-          creating meaningful impact through technology.
+          I’m passionate about designing inclusive and consistent financial experiences 
+          that simplify complexity and create trust for users.
         </p>
       </div>
 

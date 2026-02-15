@@ -2,125 +2,193 @@
   <PageWrapper :title="title">
     <div class="story-wrapper">
 
-      <!-- Hero Section -->
-      <section class="hero" v-motion
-        :initial="{ opacity: 0, y: 40 }"
-        :enter="{ opacity: 1, y: 0 }"
-        transition="0.6s">
-        <img :src="image" :alt="title" class="hero-img" />
-      </section>
-
-      <!-- Story Sections -->
-      <section
-        v-for="(block, index) in story"
-        :key="index"
-        class="story-block"
-        v-motion
-        :initial="{ opacity: 0, y: 50 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: index * 0.2 } }"
-      >
-        <h3 class="block-title">{{ block.heading }}</h3>
-        <p class="block-text">{{ block.text }}</p>
-
-        <!-- Single Image -->
-        <img 
-          v-if="block.image" 
-          :src="block.image" 
-          class="block-img" 
-          alt="story image" 
-        />
-
-        <!-- Multiple Images -->
-        <div v-if="block.images" class="image-row">
-          <img 
-            v-for="(img, idx) in block.images"
+      <!-- Carousel with Vertical Indicators -->
+      <section class="carousel-wrapper">
+        <div class="carousel-images">
+          <img
+            v-for="(img, idx) in images"
             :key="idx"
             :src="img"
-            class="block-img multi-img"
-            alt="story image"
+            :alt="`Slide ${idx + 1}`"
+            :class="{ active: idx === currentIndex }"
           />
+        </div>
+
+        <!-- Vertical indicators -->
+        <div class="carousel-indicators">
+          <span
+            v-for="(img, idx) in images"
+            :key="idx"
+            :class="{ active: idx === currentIndex }"
+            @click="currentIndex = idx"
+          ></span>
         </div>
       </section>
 
+      <!-- Summary Section -->
+      <section class="summary-block" v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :enter="{ opacity: 1, y: 0 }">
+
+        <h2 class="project-title">{{ title }}</h2>
+
+        <p class="summary-text">{{ summary }}</p>
+
+        <!-- Highlights -->
+        <ul v-if="highlights && highlights.length" class="highlight-list">
+          <li v-for="(item, i) in highlights" :key="i">{{ item }}</li>
+        </ul>
+
+        <!-- View Case Study Button -->
+        <a v-if="pdf" :href="pdf" target="_blank" rel="noopener" class="view-btn">
+          View Case Study
+        </a>
+
+      </section>
     </div>
   </PageWrapper>
 </template>
 
 <script>
 import PageWrapper from "@/components/PageWrapper.vue";
-import { MotionPlugin } from "@vueuse/motion";
 
 export default {
   name: "UiUxStory",
   components: { PageWrapper },
   props: {
     title: String,
-    image: String,
-    story: Array, // [{ heading: "", text: "", image: "" }]
+    images: Array,
+    summary: String,
+    highlights: Array,
+    pdf: String,
+  },
+  data() {
+    return {
+      currentIndex: 0,
+      intervalId: null,
+    };
+  },
+  mounted() {
+    // Auto-slide every 4 seconds
+    this.intervalId = setInterval(this.next, 4000);
+  },
+  beforeUnmount() {
+    clearInterval(this.intervalId);
+  },
+  methods: {
+    next() {
+      this.currentIndex =
+        this.currentIndex === this.images.length - 1 ? 0 : this.currentIndex + 1;
+    },
   },
 };
 </script>
 
 <style scoped>
 .story-wrapper {
-  max-width: 900px;
+  max-width: 850px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 2rem;
+/* Carousel wrapper */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.hero-img {
+/* Images */
+.carousel-images {
+  flex: 1;
+  position: relative;
+  height: 400px; /* Taller carousel */
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.carousel-images img {
+  position: absolute;
   width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 0 14px rgba(142, 142, 142, 0.4);
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.hero-title {
-  margin-top: 1rem;
-  font-size: 1.8rem;
-  color: #c2c2c2;
-  text-shadow: 0 0 6px #c2c2c2;;
+.carousel-images img.active {
+  opacity: 1;
 }
 
-.story-block {
+/* Vertical indicators */
+.carousel-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carousel-indicators span {
+  width: 6px;
+  height: 60px; /* Each line represents a slide */
+  background: rgba(194, 194, 194, 0.5);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carousel-indicators span.active {
+  background: #c2c2c2;
+  transform: scaleX(1.5);
+}
+
+/* Summary */
+.summary-block {
   background: rgba(255, 255, 255, 0.06);
-  padding: 1.8rem;
-  border-radius: 14px;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid #c2c2c2;;
+  padding: 2rem;
+  border-radius: 16px;
+  border-left: 4px solid #c2c2c2;
 }
 
-.block-title {
-  color: #c2c2c2;;
-  font-size: 1.3rem;
+.project-title {
+  font-size: 1.6rem;
+  color: #c2c2c2;
+  margin-bottom: 1rem;
+}
+
+.summary-text {
+  color: #c2c2c2;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.highlight-list {
+  color: #c2c2c2;
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-list li {
   margin-bottom: 0.5rem;
 }
 
-.block-text {
-  color: #c2c2c2;;
-  margin-bottom: 1rem;
-  line-height: 1.7;
+/* View Button */
+.view-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  background: #c2c2c2;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.block-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 1rem;
-  box-shadow: 0 0 10px rgba(255, 176, 103, 0.25);
-}
-
-.image-row {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.multi-img {
-  width: 50%;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 176, 103, 0.25);
+.view-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
 }
 </style>

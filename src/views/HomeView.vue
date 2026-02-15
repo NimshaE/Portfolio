@@ -8,15 +8,10 @@
           <p class="tagline">UI/UX Engineer · AI Enthusiast · Software Developer</p>
 
           <nav class="nav-links">
-            <!--<router-link to="/ai">AI Engineering</router-link>-->
-            <router-link to="/research">Researches</router-link>
-            <router-link to="/uiux">UI/UX Designing</router-link>
+            <router-link to="/uiux">Product Designs</router-link>
             <router-link to="/about">About Me</router-link>
+            <router-link to="/contact">Contact</router-link>
           </nav>
-
-          <!--<div class="chatbot-section">
-            <Chatbot />
-          </div>-->
 
         </div>
       </div>
@@ -36,11 +31,10 @@
 
 <script>
 import SocialLinks from "@/components/SocialLinks.vue";
-import Chatbot from "@/components/Chatbot.vue";
 
 export default {
   name: "HomeView",
-  components: { SocialLinks, Chatbot },
+  components: { SocialLinks },
 };
 </script>
 
@@ -135,19 +129,10 @@ export default {
   transition: width 0.3s;
 }
 
-.nav-links a:hover {
-  color: #f8f9fa;        /* filled color */
-  -webkit-text-stroke: 1px transparent;
-}
-
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* Chatbot */
-.chatbot-section {
-  margin-top: 2rem;
-}
 
 /* ✅ Updated Footer */
 .footer {

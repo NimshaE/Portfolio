@@ -1,35 +1,29 @@
 <template>
   <UiUxStory
-    title="Platform Design Enhancement"
-    :image="require('@/assets/uiux/projects/hero-3.png')"
-    :story="[
-      {
-        heading: 'Background',
-        text: 'This multi-phase platform project covered UX improvements for both user and admin systems, including accounting tools, reports, dashboards, and mobile time-tracking. Work included branding updates, major new feature additions, and design support throughout development.',
-      },
-      {
-        heading: 'Problem',
-        text: 'The existing platform lacked visual consistency, had limited reporting capabilities, and required new modules for financial management, user roles, transactions, and mobile attendance tracking. Branding inconsistencies and outdated UI patterns created usability gaps.',
-        image: require('@/assets/uiux/projects/prob-3.png')
-      },
-      {
-        heading: 'Solution',
-        text: 'I redesigned the platform’s visual identity starting with logo modernization. I added new financial features, enhanced settings and reports, improved user management, and expanded the dashboard with analytical components. I created mock-ups for pricing, subscription flows, billing, and email notifications. Additional scopes included advanced accountant modules, asset management, tax reports, and admin subscription controls.For mobile, I designed time-tracking wireframes and mock-ups supporting attendance logging, workspace management, and role-based access. Designs were continuously validated with client and development teams.',
-        images: [
-          require('@/assets/uiux/projects/sol-5.png'),
-          require('@/assets/uiux/projects/sol-6.png')
-        ]
-      },
-      {
-        heading: 'Impact',
-        text: 'The redesigned platform delivered stronger branding, clearer workflows, and vastly expanded system capabilities. Users gained improved reporting, easier navigation, and mobile access to essential features. The project strengthened platform reliability, improved design–development alignment, and enhanced overall user satisfaction across both desktop and mobile experiences.',
-      }
+    title="Multi-Module Financial Platform Enhancement"
+    :images="[
+      require('@/assets/uiux/projects/3/pro-3-1.png'),
+      require('@/assets/uiux/projects/3/pro-3-2.png'),
+      require('@/assets/uiux/projects/3/pro-3-3.png'),
+      require('@/assets/uiux/projects/3/pro-3-4.png')
     ]"
+    summary="Led a 6+ month system-level UX modernization of a live administrative and digital presentation portal serving multiple role types. Migrated a fragmented legacy design system to a scalable component architecture, reduced navigation depth through contextual workflows, clarified role-based permissions, and introduced a new visual flowchart builder, transforming a structurally fragmented platform into a cohesive, extensible system while balancing technical and timeline constraints."
+    :highlights="[
+      'Migrated legacy Adobe XD system to Figma and standardized ~80% of recurring UI components into a scalable design system',
+      'Reduced admin workflow friction by introducing contextual side-panel CRUD interactions, minimizing page reload dependency',
+      'Clarified role-based permissions and system status visibility across multi-tier admin structures',
+      'Modularized high-complexity management sections to reduce interface fragmentation and improve scalability',
+      'Redesigned digital presentation editing workflows to improve continuity, status tracking, and usability',
+      'Designed and delivered a drag-and-connect flowchart builder by aligning UX patterns with third-party library and engineering constraints',
+      'Reduced long-term design debt while maintaining roadmap velocity in a live production environment'
+    ]"
+    pdf="/pdfs/Project3.pdf"
   />
 </template>
 
 <script>
 import UiUxStory from "@/components/UiUxStory.vue";
+
 export default {
   components: { UiUxStory },
 };
