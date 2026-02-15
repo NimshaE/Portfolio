@@ -5,7 +5,7 @@
       <div class="left-panel">
         <div class="content">
           <h1 class="name">Nimsha Erin</h1>
-          <p class="tagline">UI/UX Engineer · AI Enthusiast · Software Developer</p>
+          <p class="tagline">Product Designer · UX/UI Specialist · Human-Centered Design Advocate</p>
 
           <nav class="nav-links">
             <router-link to="/uiux">Product Designs</router-link>
