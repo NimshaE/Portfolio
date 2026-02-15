@@ -16,7 +16,7 @@
       'Strengthened acquisition UX through CTA prioritization, SEO structure, and improved public-site navigation',
       'Standardized system feedback loops (email, error states, notifications) to enhance cross-touchpoint coherence'
     ]"
-    pdf="/pdfs/Project2.pdf"
+    pdf="pdfs/Project2.pdf"
   />
 </template>
 

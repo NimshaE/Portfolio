@@ -17,7 +17,7 @@
       'Introduced feedback capture at churn-risk moment to support retention insights',
       'Delivered high-impact UX improvements within existing architecture and performance constraints'
     ]"
-    pdf="/pdfs/Project4.pdf"
+    pdf="pdfs/Project4.pdf"
   />
 </template>
 

@@ -17,7 +17,7 @@
       'Designed and delivered a drag-and-connect flowchart builder by aligning UX patterns with third-party library and engineering constraints',
       'Reduced long-term design debt while maintaining roadmap velocity in a live production environment'
     ]"
-    pdf="/pdfs/Project3.pdf"
+    pdf="pdfs/Project3.pdf"
   />
 </template>
 
