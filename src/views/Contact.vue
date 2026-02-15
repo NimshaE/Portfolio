@@ -34,7 +34,7 @@
           <!-- Resume Button -->
           <div class="resume-section">
             <a 
-              href="/resume.pdf" 
+              :href="import.meta.env.BASE_URL + 'resume.pdf'" 
               target="_blank" 
               class="resume-button"
             >
