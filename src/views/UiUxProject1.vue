@@ -17,7 +17,7 @@
       'Designed and launched a desktop + mobile time-tracking module aligned with financial reporting and export workflows',
       'Reduced design debt and enabled scalable module expansion without disrupting legacy backend systems'
     ]"
-    pdf="/pdfs/Project1.pdf"
+    pdf="pdfs/Project1.pdf"
   />
 </template>
 
