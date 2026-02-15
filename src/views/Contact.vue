@@ -32,12 +32,11 @@
           </div>
 
           <!-- Resume Button -->
-          <div class="resume-section">
-            <a 
-              :href="import.meta.env.BASE_URL + 'resume.pdf'" 
-              target="_blank" 
-              class="resume-button"
-            >
+          <a
+            href="resume.pdf"
+            target="_blank"
+            class="resume-button"
+          >
               View Resume
             </a>
           </div>
